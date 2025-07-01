@@ -1,0 +1,14 @@
+[project]
+name = "play-with-workflows"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.2.1",
+    "earthkit-workflows",
+    "ipykernel>=6.29.5",
+]
+
+[tool.uv.sources]
+earthkit-workflows = { path = "../../github.com/ecmwf/earthkit-workflows" }

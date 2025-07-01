@@ -1,8 +1,7 @@
 from earthkit.workflows.decorators import as_payload
-from datetime import datetime
 
 @as_payload
-def get_ifs(time: str):
+def get_ifs(time):
     return 'ifs@' + time
 
 

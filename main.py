@@ -9,7 +9,7 @@ def cli():
 
 
 @cli.command()
-@click.option('--time', type=click.DateTime(), default=datetime(2025,7,1, 0, 0, 0, tzinfo=UTC), help='Time to get data for')
+@click.option('--time', type=click.DateTime(), default=datetime(2025,7,1, 0, 0, 0), help='Time to get data for')
 @click.option('--cascade', default='tcp://localhost:8067', help='Address of the Cascade server')
 def run(time: datetime, cascade: str):
     '''Run a workflow, gathering and preparing data for a bris run.'''
@@ -23,7 +23,7 @@ def json():
     pass
 
 @json.command()
-@click.option('--time', type=click.DateTime(), default=datetime(2025,7,1, 0, 0, 0, tzinfo=UTC), help='Time to get data for')
+@click.option('--time', type=click.DateTime(), default=datetime(2025,7,1, 0, 0, 0), help='Time to get data for')
 def dump(time: datetime):
     a = action.create(time=time)
     print(execute.make_json(a))

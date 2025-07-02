@@ -353,7 +353,8 @@ wheels = [
 
 [[package]]
 name = "earthkit-data"
-source = { directory = "../../github.com/ecmwf/earthkit-data" }
+version = "0.15.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cfgrib" },
     { name = "dask" },
@@ -375,66 +376,10 @@ dependencies = [
     { name = "tqdm" },
     { name = "xarray" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "aws-requests-auth", marker = "extra == 's3'" },
-    { name = "botocore", marker = "extra == 's3'" },
-    { name = "cartopy", marker = "extra == 'projection'" },
-    { name = "cdsapi", marker = "extra == 'cds'", specifier = ">=0.7.2" },
-    { name = "cfgrib", specifier = ">=0.9.10.1" },
-    { name = "covjsonkit", marker = "extra == 'covjsonkit'", specifier = ">=0.1.1" },
-    { name = "dask" },
-    { name = "deprecation" },
-    { name = "earthkit-data", extras = ["all", "docs", "test"], marker = "extra == 'dev'" },
-    { name = "earthkit-data", extras = ["cds", "covjsonkit", "ecmwf-opendata", "fdb", "geo", "geopandas", "mars", "odb", "polytope", "projection", "s3", "wekeo"], marker = "extra == 'all'" },
-    { name = "earthkit-data-demo-source", marker = "extra == 'test'" },
-    { name = "earthkit-geo", marker = "extra == 'geo'", specifier = ">=0.2" },
-    { name = "earthkit-meteo", specifier = ">=0.0.1" },
-    { name = "earthkit-utils", specifier = ">=0.0.1" },
-    { name = "eccodes", specifier = ">=1.7" },
-    { name = "ecmwf-api-client", marker = "extra == 'mars'", specifier = ">=1.6.1" },
-    { name = "ecmwf-opendata", marker = "extra == 'ecmwf-opendata'", specifier = ">=0.3.3" },
-    { name = "entrypoints" },
-    { name = "filelock" },
-    { name = "geopandas", marker = "extra == 'geopandas'" },
-    { name = "hda", marker = "extra == 'wekeo'", specifier = ">=2.22" },
-    { name = "jinja2" },
-    { name = "jsonschema" },
-    { name = "lru-dict" },
-    { name = "markdown" },
-    { name = "multiurl", specifier = ">=0.3.3" },
-    { name = "nbconvert", marker = "extra == 'test'" },
-    { name = "nbformat", marker = "extra == 'test'" },
-    { name = "nbsphinx", marker = "extra == 'docs'" },
-    { name = "netcdf4" },
-    { name = "numpy", marker = "extra == 'ci'" },
-    { name = "pandas" },
-    { name = "pdbufr", specifier = ">=0.11" },
-    { name = "polytope-client", marker = "extra == 'polytope'", specifier = ">=0.7.6" },
-    { name = "pyfakefs", marker = "extra == 'test'" },
-    { name = "pyfdb", marker = "extra == 'fdb'", specifier = ">=0.1" },
-    { name = "pygments", marker = "extra == 'docs'", specifier = ">=2.6.1" },
-    { name = "pyodc", marker = "extra == 'odb'" },
-    { name = "pyproj", marker = "extra == 'geotiff'" },
-    { name = "pytest", marker = "extra == 'test'" },
-    { name = "pytest-cov", marker = "extra == 'test'" },
-    { name = "pytest-forked", marker = "extra == 'test'" },
-    { name = "pytest-timeout", marker = "extra == 'test'" },
-    { name = "pyyaml" },
-    { name = "rasterio", marker = "extra == 'geotiff'" },
-    { name = "rioxarray", marker = "extra == 'geotiff'" },
-    { name = "sphinx", marker = "extra == 'docs'", specifier = ">=7.3.7" },
-    { name = "sphinx-autoapi", marker = "extra == 'docs'" },
-    { name = "sphinx-copybutton", marker = "extra == 'docs'" },
-    { name = "sphinx-issues", marker = "extra == 'docs'" },
-    { name = "sphinx-rtd-theme", marker = "extra == 'docs'" },
-    { name = "sphinx-tabs", marker = "extra == 'docs'" },
-    { name = "tqdm", specifier = ">=4.63" },
-    { name = "xarray", specifier = ">=0.19" },
-    { name = "zarr", marker = "extra == 'zarr'", specifier = ">=3" },
+sdist = { url = "https://files.pythonhosted.org/packages/60/70/4c73157ac78a48d75fd979f473a6c5ee7b6957eddec6dc3fd24a4e7d7830/earthkit_data-0.15.0.tar.gz", hash = "sha256:70babe1aff25887cea75def77be93250413ca240220c40ff9e6708c641de6030", size = 5293153, upload-time = "2025-06-24T15:19:07.588Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/df/ce/c63acacb088e49ff6fa8cdf85115a77a4a989126f54591f24b595b01ee56/earthkit_data-0.15.0-py3-none-any.whl", hash = "sha256:daed39f045d8f1677369a46e1094e29d031102859de366e926bd5e69e5bb7c34", size = 375795, upload-time = "2025-06-24T15:19:05.824Z" },
 ]
-provides-extras = ["all", "cds", "ci", "covjsonkit", "dev", "docs", "ecmwf-opendata", "fdb", "geo", "geopandas", "geotiff", "mars", "odb", "polytope", "projection", "s3", "test", "wekeo", "zarr"]
 
 [[package]]
 name = "earthkit-meteo"
@@ -463,7 +408,8 @@ wheels = [
 
 [[package]]
 name = "earthkit-workflows"
-source = { directory = "../../github.com/ecmwf/earthkit-workflows" }
+version = "0.3.5"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "array-api-compat" },
     { name = "cloudpickle" },
@@ -480,39 +426,10 @@ dependencies = [
     { name = "xarray" },
     { name = "zmq" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "array-api-compat" },
-    { name = "black", marker = "extra == 'lint'" },
-    { name = "bokeh", marker = "extra == 'examples'" },
-    { name = "cascade", extras = ["earthkit", "examples", "gpu", "kubernetes", "lint", "tests"], marker = "extra == 'all'" },
-    { name = "cftime", marker = "extra == 'examples'" },
-    { name = "cloudpickle" },
-    { name = "cupy-cuda11x", marker = "extra == 'gpu'" },
-    { name = "dill" },
-    { name = "earthkit-data" },
-    { name = "earthkit-data", marker = "extra == 'earthkit'" },
-    { name = "earthkit-data", marker = "extra == 'tests'" },
-    { name = "fire" },
-    { name = "flake8", marker = "extra == 'lint'" },
-    { name = "isort", marker = "extra == 'lint'" },
-    { name = "jax", extras = ["cpu"], marker = "extra == 'gpu'" },
-    { name = "jax", extras = ["cuda11-pip"], marker = "extra == 'gpu'" },
-    { name = "networkx" },
-    { name = "numba", marker = "extra == 'gpu'" },
-    { name = "numpy" },
-    { name = "orjson" },
-    { name = "pydantic" },
-    { name = "pyrsistent" },
-    { name = "pytest", marker = "extra == 'tests'" },
-    { name = "pytest-xdist", marker = "extra == 'tests'" },
-    { name = "pyvis" },
-    { name = "sortedcontainers" },
-    { name = "xarray" },
-    { name = "zmq" },
+sdist = { url = "https://files.pythonhosted.org/packages/6c/9e/6263d118525fa655070f24c8491ca5aa55e22d02365e9c89c7fc67e0bce7/earthkit_workflows-0.3.5.tar.gz", hash = "sha256:e05c835c27b0867340a4d283a3e3e9c3a310e07ec39ce2c4422bbecfacb4a306", size = 10479897, upload-time = "2025-06-30T14:44:45.386Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7a/c0/3fd8c1a0359efb5dcfc8b8fe1b04dbb832a6815390bcb59f45de9876f3ee/earthkit_workflows-0.3.5-py3-none-any.whl", hash = "sha256:937160b302862c89cf616bd4b8c1f2fc89c40ebd1880423532e9da18c78dbf69", size = 143830, upload-time = "2025-06-30T14:44:43.705Z" },
 ]
-provides-extras = ["tests", "lint", "gpu", "examples", "earthkit", "all"]
 
 [[package]]
 name = "eccodes"
@@ -1221,8 +1138,8 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = ">=8.2.1" },
-    { name = "earthkit-data", directory = "../../github.com/ecmwf/earthkit-data" },
-    { name = "earthkit-workflows", directory = "../../github.com/ecmwf/earthkit-workflows" },
+    { name = "earthkit-data" },
+    { name = "earthkit-workflows" },
     { name = "ecmwf-api-client", specifier = ">=1.6.5" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "polytope-client", specifier = ">=0.7.6" },

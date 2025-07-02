@@ -14,6 +14,3 @@ dependencies = [
     "rioxarray>=0.19.0",
 ]
 
-[tool.uv.sources]
-earthkit-workflows = { path = "../../github.com/ecmwf/earthkit-workflows" }
-earthkit-data = { path = "../../github.com/ecmwf/earthkit-data" }

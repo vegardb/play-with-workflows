@@ -31,13 +31,15 @@ def download(reference_time: datetime, output_dir: str) -> typing.Iterable[ekd.F
         grid_str = _MAX_RESOLUTION
         filename = os.path.join(
             output_dir,
-            f'{output_dir}/global_{reference_time.strftime("%Y%m%d%H")}_{level_type}_{grid_str}.grib'
+            f'global_{reference_time.strftime("%Y%m%d%H")}_{level_type}_{grid_str}.grib'
         )
         if os.path.exists(filename):
             yield ekd.from_source("file", filename) # type: ignore
             continue
 
-        yield _download(reference_time, level_type)
+        ret = _download(reference_time, level_type)
+        ret.to_target("file", filename)
+        yield ret
 
 
 def _download(reference_time: datetime, level_type: str) -> ekd.FieldList:
@@ -45,9 +47,9 @@ def _download(reference_time: datetime, level_type: str) -> ekd.FieldList:
 
     request = _get_request(reference_time, level_type, grid)
 
-    # request['class'] = 'od'  # Needed since we use polytope
-    # ds = ekd.from_source("polytope", "ecmwf-mars", request, read_all=True)
-    ds = ekd.from_source("mars", request, read_all=True)
+    request['class'] = 'od'  # Needed since we use polytope
+    ds = ekd.from_source("polytope", "ecmwf-mars", request, read_all=True)
+    # ds = ekd.from_source("mars", request, read_all=True)
     
     return ds  # type: ignore
 
@@ -106,3 +108,11 @@ _SFC_PARAMETERS = ["2t", "2d", "skt", "tp", "10u", "10v", "z", "lsm", "tcw",
                    "sp", "msl", "lcc", "mcc", "hcc", "tcc", "3020", "10si", "cbh", "ssrd", "strd"]
 _LVL_PARAMETERS = ["t", "q", "u", "v", "w", "z"]
 _LEVELS = [50, 100, 150, 200, 250, 300, 400, 500, 700, 850, 925, 1000]
+
+
+if __name__ == '__main__':
+    output_dir = 'cache'
+    reference_time = datetime.strptime('2025-07-01T00:00:00', '%Y-%m-%dT%H:00:00')
+
+    for ds in download(reference_time, output_dir):
+        print(ds)

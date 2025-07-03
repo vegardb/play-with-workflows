@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "anemoi-models==0.4.1",
     "click>=8.2.1",
     "earthkit-data",
     "earthkit-workflows",

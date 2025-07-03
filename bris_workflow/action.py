@@ -7,8 +7,6 @@ from datetime import datetime
 def create(time: datetime) -> fluent.Action:
     get_global_data_action = fluent.from_source([ifs.get(time)]) # type: ignore
 
-    return get_global_data_action
-
     get_orography_action = fluent.from_source([orography.get()]) # type: ignore
     create_graph_action = fluent.from_source([graph.create()]) # type: ignore
 
